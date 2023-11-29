@@ -78,9 +78,17 @@ def fetch_data(
     >>> fetch_players_seasons_test = {'LeBron James': ['2019']}
     >>> target_stats_test = ['PTS', 'AST', 'REB', 'FG_PCT']
     >>> fetch_data(fetch_players_seasons_test, target_stats_test)
-    {'LeBron James': {'PPG': 25.34328358208955, 'APG': 10.208955223880597, 'RPG': 7.835820895522388,
-    'FG%': 0.4896119402985075}}
+    {'LeBron James_2019': {'PTS': 25.34328358208955, 'AST': 10.208955223880597, 'REB': 7.835820895522388, 'FG_PCT': 0.4896119402985075}}
 
+    >>> fetch_players_seasons_test = {'Kobe Bryant': ['2019']}
+    >>> fetch_data(fetch_players_seasons_test, target_stats_test)
+    No data available for player ID 977 in the 2019 season.
+    {}
+
+    >>> fetch_players_seasons_test = {'LeBron James': ['2028']}
+    >>> fetch_data(fetch_players_seasons_test, target_stats_test)
+    No data available for player ID 2544 in the 2028 season.
+    {}
     """
 
     average_stats = {}
