@@ -3,23 +3,11 @@
 ### Introduction
 This project was inspired by an analysis on Kaggle focusing on NBA height and weight data ([NBA Height and Weight Analysis](https://www.kaggle.com/code/justinas/nba-height-and-weight-analysis)). While the original analysis provided insightful observations in various areas, it lacked specific position data for NBA players. Recognizing the importance of player positions in understanding the relationship between player attributes (such as height and weight) and their performance in different roles, this project aims to fill that gap. By integrating position data into the existing dataset, we seek to offer a more nuanced analysis that considers the critical aspect of player positions and how they correlate with other success factors in the NBA.
 
-### Methodology
+---
 
-#### Data Acquisition and Processing
-The project's data acquisition and processing are handled through these primary files:
-
-1. **Position Data Integration (`fetch_position.ipynb`)**: This notebook augments the main dataset with player position data. This addition is vital for analyzing the relationship between player attributes, such as height and weight, and their performance in different positions.
-
-2. **Off-Court Event Data Collection (`fetchData_OffCourt.ipynb`, `dataProcessing_OffCourt.py` and `fetchData_OffCourt.py`)**: These files focus on gathering data related to players' off-court events. This data is crucial for understanding how personal events outside the court may influence players' on-court performance metrics.
-
-#### Analysis Approach
-The analysis is divided into two main areas:
-
-- **Position and Physical Attributes Analysis (`positionAnalysis.ipynb`)**: This part of the analysis aims to understand the correlation between players' physical attributes and their performance in various playing positions. It involves a detailed examination of the dataset, enriched with position data, to draw insights into how height, weight, and position interplay in determining a player's success.
-
-- **Impact of Off-Court Events on Performance (`offCourtImpactAnalysis.ipynb`)**: The second focus is on exploring the impact of off-court events on players' on-court performance. This involves comparing performance metrics before and after specific personal events to uncover patterns and insights into how these events might affect players' professional basketball careers.
-
-Through these methodologies, the project provides a comprehensive view of NBA players, merging physical, professional, and personal dimensions to offer a deeper understanding of the factors influencing their performance.
+### Data Source
+The initial data were sourced from [Kaggle: NBA Players Data](https://www.kaggle.com/datasets/justinas/nba-players-data).  
+The data for this analysis was obtained using the [`nba_api`](https://github.com/swar/nba_api), an API client for the NBA. This Python library provides access to live data, statistics, and other information from the NBA.
 
 ---
 
@@ -41,6 +29,8 @@ This dataset contains detailed information on NBA players from various seasons. 
 
 The initial data were sourced from [Kaggle: NBA Players Data](https://www.kaggle.com/datasets/justinas/nba-players-data). Further, the player positions were added using a Jupyter Notebook (`fetch_position.ipynb`), enhancing the dataset with additional categorization.
 
+---
+
 ### Additional Datasets and Analysis Context
 
 In addition to the main dataset, this analysis also utilizes three other key datasets which focus on the performance of specific NBA players during notable periods in their careers. These periods are often aligned with significant off-court events in their lives:
@@ -57,6 +47,28 @@ In addition to the main dataset, this analysis also utilizes three other key dat
 10. **DeMar DeRozan** - Analyzing the 2018-2019 season, following his trade to the Spurs and his openness about mental health.
 
 These datasets (`before_averages.csv`, `after_averages.csv`, and `target_average_player_stats.csv`) are used to analyze the performance metrics of these players before and after the specific events, providing insights into how off-court issues might have impacted their on-court performance.
+
+---
+
+### Methodology
+
+#### Data Acquisition and Processing
+The project's data acquisition and processing are handled through these primary files:
+
+1. **Position Data Integration (`fetch_position.ipynb`)**: This notebook augments the main dataset with player position data. This addition is vital for analyzing the relationship between player attributes, such as height and weight, and their performance in different positions.
+
+2. **Off-Court Event Data Collection (`fetchData_OffCourt.ipynb`, `dataProcessing_OffCourt.py` and `fetchData_OffCourt.py`)**: These files focus on gathering data related to players' off-court events. This data is crucial for understanding how personal events outside the court may influence players' on-court performance metrics.
+
+#### Analysis Approach
+The analysis is divided into two main areas:
+
+- **Position and Physical Attributes Analysis (`positionAnalysis.ipynb`)**: This part of the analysis aims to understand the correlation between players' physical attributes and their performance in various playing positions. It involves a detailed examination of the dataset, enriched with position data, to draw insights into how height, weight, and position interplay in determining a player's success.
+
+- **Impact of Off-Court Events on Performance (`offCourtImpactAnalysis.ipynb`)**: The second focus is on exploring the impact of off-court events on players' on-court performance. This involves comparing performance metrics before and after specific personal events to uncover patterns and insights into how these events might affect players' professional basketball careers.
+
+Through these methodologies, the project provides a comprehensive view of NBA players, merging physical, professional, and personal dimensions to offer a deeper understanding of the factors influencing their performance.
+
+---
 
 ### Results and Visualizations
 
@@ -96,6 +108,38 @@ For a more comprehensive analysis, please refer to our [Off-Court Impact Analysi
 
 ---
 
+### Setting Up the Environment
 
-### Data Source
-The data for this analysis was obtained using the [`nba_api`](https://github.com/swar/nba_api), an API client for the NBA. This Python library provides access to live data, statistics, and other information from the NBA.
+To replicate the analysis and run the notebooks locally, you can follow these steps to set up a virtual environment and install the required packages.
+
+#### Prerequisites
+
+- Python 3.7+
+- `virtualenv` (if not installed, you can install it using `pip install virtualenv`)
+
+#### Steps
+
+- Clone this repository to your local machine.
+
+```bash
+git clone https://github.com/ChuanCheLin/NBA-Height-and-Weight-Analysis.git
+cd NBA-Height-and-Weight-Analysis
+```
+- Create a virtual environment (venv) for this project. Replace <venv_name> with your preferred name for the virtual environment.
+```bash
+python -m venv <venv_name>
+```
+- Activate the virtual environment:
+- On Windows:
+```bash
+<venv_name>\Scripts\activate
+```
+- On macOS and Linux:
+```bash
+source <venv_name>/bin/activate
+```
+
+- Install the required packages using pip and the provided requirements.txt file:
+```bash
+pip install -r requirements.txt
+```
